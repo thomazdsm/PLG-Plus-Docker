@@ -1,6 +1,6 @@
 # 📊 VPS & Docker Observability Stack
 
-Este projeto implementa uma solução completa de monitoramento e observabilidade para servidores VPS e containers Docker, utilizando a stack moderna **PLG** (Prometheus, Loki, Grafana).
+Este projeto implementa uma solução completa de monitoramento e observabilidade para servidores VPS e containers Docker, utilizando a stack moderna **PLG** (Promtail, Loki, Grafana).
 
 A infraestrutura é gerenciada inteiramente via Docker Compose, facilitando o deploy, versionamento e migração entre servidores.
 
@@ -31,7 +31,7 @@ A solução é composta por 6 serviços integrados:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone <url-do-seu-repo> monitoramento
+    git clone https://github.com/thomazdsm/PLG-Plus-Docker.git monitoramento
     cd monitoramento
     ```
 
