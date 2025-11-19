@@ -77,7 +77,7 @@ services:
 
   # --- AGENTE DE CONTAINERS ---
   cadvisor:
-    image: gcr.io/cadvisor/cadvisor:${CADVISOR_VERSION}
+    image: zcube/cadvisor:${CADVISOR_VERSION}
     container_name: monitoring-cadvisor
     restart: unless-stopped
     # cAdvisor precisa de acesso privilegiado em alguns sistemas

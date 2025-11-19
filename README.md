@@ -115,4 +115,14 @@ monitoramento/
 
 ## 📝 Licença
 
-Este projeto é fornecido como está, para uso livre.
+Este projeto é Open Source e distribuído sob a licença MIT.
+
+Você é livre para usar, modificar e distribuir este setup para fins pessoais ou comerciais, sem garantia de qualquer tipo. As ferramentas utilizadas (Grafana, Prometheus, Loki, etc) possuem suas próprias licenças (geralmente AGPLv3 ou Apache 2.0), verifique a documentação oficial de cada uma para conformidade em grandes escalas.
+
+---
+
+**Dica**: Acesse o repositório abaixo e basta inserir no service 'grafana' a network 'caddy_network' como external, atualizar o Caddyfile e terás acesso com certificado SSL ao seu monitoramento.
+
+```
+    https://github.com/thomazdsm/Caddy.git
+```
