@@ -1,0 +1,4 @@
+.env
+.DS_Store
+# Ignorar pastas de dados se você decidir mapear localmente no futuro
+data/
