@@ -64,17 +64,37 @@ Após a inicialização, os serviços estarão rodando internamente. O acesso pr
 
 ---
 
-## 📈 Dashboards Recomendados
+## 🔌 Configuração Inicial (Pós-instalação)
 
-O Grafana vem "limpo". Para visualizar os dados imediatamente, recomenda-se importar os seguintes Dashboards da comunidade (Menu: *Dashboards > New > Import*):
+Ao acessar o Grafana pela primeira vez, ele estará "vazio". Siga estes passos para conectar os dados:
 
-1.  **Node Exporter Full** (Monitoramento da VPS)
-    * **ID:** `1860`
-    * *O que mostra:* CPU Total, RAM, I/O de Disco, Rede, Uptime do servidor.
+### 1. Conectar Data Sources
+Vá em **Connections** (ou Administration) > **Data Sources** > **Add new data source**.
 
-2.  **cAdvisor Exporter** (Monitoramento de Containers)
-    * **ID:** `14282`
-    * *O que mostra:* Uso de memória e CPU individual por container, tráfego de rede por container.
+* **Prometheus (Métricas):**
+    * Selecione "Prometheus".
+    * URL: `http://prometheus:9090` (Atenção: Use o nome do serviço Docker, não use localhost).
+    * Clique em "Save & Test".
+
+* **Loki (Logs):**
+    * Selecione "Loki".
+    * URL: `http://loki:3100`
+    * Clique em "Save & Test".
+
+### 2. Importar Dashboards
+Para visualizar os gráficos imediatamente, importe dashboards da comunidade:
+Vá em **Dashboards** > **New** > **Import**.
+
+| ID do Dashboard | Função | Data Source Necessário |
+| :--- | :--- | :--- |
+| **1860** | Monitoramento do Host (VPS Completa) | Prometheus |
+| **14282** | Monitoramento de Containers (Docker) | Prometheus |
+
+### 3. Explorar Logs
+Para ver os logs sem criar dashboards:
+1.  Vá no menu **Explore** (ícone de bússola).
+2.  Selecione **Loki** no topo da página.
+3.  Use o "Label Browser" para filtrar por `container_name` e ver os logs em tempo real.
 
 ---
 
@@ -89,3 +109,10 @@ monitoramento/
 ├── prometheus/             # Configurações de scrape de métricas
 ├── loki/                   # Configurações de retenção e armazenamento de logs
 └── promtail/               # Configurações de coleta de logs
+```
+
+---
+
+## 📝 Licença
+
+Este projeto é fornecido como está, para uso livre.
